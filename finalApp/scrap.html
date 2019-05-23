@@ -1,0 +1,238 @@
+<!doctype html>
+
+<head>
+    <title>TutTut</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+//Nav Header
+<!--<nav>
+    <div class="topNav" id="navBar">
+        <ul id="navIcon">
+            <li><a href="profile.php"><img src="assets/img/profilePic.svg" height="150"></li>
+            <li><a href="myFeed.php"><img src="assets/img/fire.svg" height="150" color:red></li>
+            <li><a href="friendsFeed.php"><img src="assets/img/fire.svg" height="150" </li> <li><a href="logOut.php"><img src="assets/img/logOut1.svg" height="150"></li>
+        </ul>
+    </div>
+</nav>
+-->
+
+//Camera On and Off Function
+<!--
+    <div id="page-container">
+        <div id="content-wrap">
+        </div>
+    </div>
+
+    <button onclick="stop();gum('user')">Front</button>
+    <button onclick="stop();gum('environment')">Back</button>
+
+    
+    <div id="div"></div><br>
+    <video id="video" height="320" autoplay></video>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
+    <br>
+    <!--var gum = face => navigator.mediaDevices.getUserMedia({video: {facingMode: {exact: face}}})
+    .then(stream => (video.srcObject = stream))
+    .catch(e => log(e));
+
+    var stop = () => video.srcObject && video.srcObject.getTracks().map(t => t.stop());
+
+    var log = msg => div.innerHTML += "<p>" + msg + "</p>";
+
+    <video autoplay></video>
+
+
+    <script>
+        const constraints = {
+            video: true
+        };
+
+        const video = document.querySelector('video');
+
+        navigator.mediaDevices.getUserMedia(constraints).
+        then((stream) => {
+            video.srcObject = stream
+        });
+
+    </script>
+
+
+    <script>
+        const hdConstraints = {
+            video: {
+                width: {
+                    min: 1280
+                },
+                height: {
+                    min: 720
+                }
+            }
+        };
+
+        navigator.mediaDevices.getUserMedia(hdConstraints).
+        then((stream) => {
+            video.srcObject = stream
+        });
+
+        ...
+
+        const vgaConstraints = {
+            video: {
+                width: {
+                    exact: 640
+                },
+                height: {
+                    exact: 480
+                }
+            }
+        };
+
+        navigator.mediaDevices.getUserMedia(vgaConstraints).
+        then((stream) => {
+            video.srcObject = stream
+        });
+
+        const videoElement = document.querySelector('video');
+        const audioSelect = document.querySelector('select#audioSource');
+        const videoSelect = document.querySelector('select#videoSource');
+
+        navigator.mediaDevices.enumerateDevices()
+            .then(gotDevices).then(getStream).catch(handleError);
+
+        audioSelect.onchange = getStream;
+        videoSelect.onchange = getStream;
+
+        function gotDevices(deviceInfos) {
+            for (let i = 0; i !== deviceInfos.length; ++i) {
+                const deviceInfo = deviceInfos[i];
+                const option = document.createElement('option');
+                option.value = deviceInfo.deviceId;
+                if (deviceInfo.kind === 'audioinput') {
+                    option.text = deviceInfo.label ||
+                        'microphone ' + (audioSelect.length + 1);
+                    audioSelect.appendChild(option);
+                } else if (deviceInfo.kind === 'videoinput') {
+                    option.text = deviceInfo.label || 'camera ' +
+                        (videoSelect.length + 1);
+                    videoSelect.appendChild(option);
+                } else {
+                    console.log('Found another kind of device: ', deviceInfo);
+                }
+            }
+        }
+
+        stream.getTracks().forEach(track => track.stop())
+
+        function getStream() {
+            if (window.stream) {
+                //stream.getTracks().forEach(track => track.stop())
+                window.stream.getTracks().forEach(function(track) {
+                    track.stop();
+                });
+            }
+
+
+            const constraints = {
+                audio: {
+                    deviceId: {
+                        exact: audioSelect.value
+                    }
+                },
+                video: {
+                    deviceId: {
+                        exact: videoSelect.value
+                    }
+                }
+            };
+
+            navigator.mediaDevices.getUserMedia(constraints).
+            then(gotStream).catch(handleError);
+        }
+
+        function gotStream(stream) {
+            window.stream = stream; // make stream available to console
+            videoElement.srcObject = stream;
+        }
+
+        function handleError(error) {
+            console.error('Error: ', error);
+        }
+
+        var gum = face => navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: {
+                        exact: face
+                    }
+                }
+            })
+            .then(stream => (video.srcObject = stream))
+            .catch(e => log(e));
+
+        var stop = () => video.srcObject && video.srcObject.getTracks().map(t => t.stop());
+
+        var log = msg => div.innerHTML += "<p>" + msg + "</p>";
+
+    </script>
+-->
+    <!--  create button to play video
+
+ <button onclick="playVid()" type="button">Play Video</button>
+<button onclick="pauseVid()" type="button">Pause Video</button><br> 
+
+<video id="myVideo" width="320" height="176">
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<script> 
+var vid = document.getElementById("myVideo"); 
+
+function playVid() { 
+  vid.play(); 
+} 
+
+function pauseVid() { 
+  vid.pause(); 
+} 
+</script> 
+-->
+    
+    
+    //original sign up page
+    
+        <form action="profiles.php" method="post" enctype="multipart/form-data">
+        <label>Name
+            <input type="text" name="name" required><br>
+        </label>
+        <br>
+        <label>Photo
+            <input type="file" name="photo" required><br>
+        </label>
+        <p><b>Gender</b></p>
+        <label><input type="radio" name="gender" value="Male" required> Male
+        </label>
+        <label><input type="radio" name="gender" value="Female" required> Female<br>
+        </label>
+        <br>
+        <input onclick="window.location.href = 'myprofile.php';" type="submit" value="Submit request" />
+    </form><br>
+    
+    
+    
+
+    <footer id="bottomBar">
+        <ul id="iconBar">
+            <li id="buy"><a href="buyCover.php"><img src="assets/img/money.png" height="75"></li>
+            <li id="goLive"><a href="goLive.html"><img src="assets/img/goLive.png" height="75"></li>
+            <li id="search"><a href="searchProfiles.php"><img src="assets/img/search.png" height="75"></li>
+            <li id="share"><a href="shareStream.php"><img src="assets/img/share.png" height="75"></a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
